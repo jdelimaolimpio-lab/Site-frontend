@@ -1,0 +1,221 @@
+/* ==========================================================================
+   1. RESET GLOBAL
+   Remove as margens e espaçamentos padrão de todos os navegadores para 
+   garantir que o layout fique exatamente igual em qualquer ecrã.
+   ========================================================================== */
+* {
+    margin: 0;                   /* Remove a margem externa padrão de todos os elementos */
+    padding: 0;                  /* Remove o espaçamento interno padrão de todos os elementos */
+    box-sizing: border-box;      /* Garante que 'padding' e 'border' não aumentem a largura total do elemento */
+}
+
+/* ==========================================================================
+   2. ESTILOS BASE DA PÁGINA (BODY)
+   ========================================================================== */
+body {
+    background-color: #eeeeee;   /* Cor de fundo cinzenta clara para a página */
+    color: #333333;              /* Cor principal do texto (cinzento escuro para bom contraste) */
+    font-family: Arial, sans-serif; /* Define a fonte principal e uma fonte genérica de reserva */
+    font-size: 16px;             /* Tamanho base do texto em toda a página */
+}
+
+/* Container genérico para centralizar blocos de conteúdo */
+.container {
+    background-color: #ffffff;   /* Fundo branco para a caixa */
+    border: 2px solid #dddddd;   /* Borda cinzenta clara em redor da caixa */
+    border-radius: 10px;         /* Cantos arredondados */
+    max-width: 500px;            /* Largura máxima permitida para a caixa */
+    margin: 30px auto;           /* 30px de distância no topo/fundo e 'auto' para centralizar no meio da tela */
+    padding: 20px;               /* Espaço interno entre o texto e a borda da caixa */
+}
+
+/* ==========================================================================
+   3. CABEÇALHO (HEADER) - ESTRUTURA E NAVEGAÇÃO
+   ========================================================================== */
+header {
+    background-color: #12756e;   /* Cor de fundo verde-escuro */
+    color: #ffffff;              /* Cor do texto dentro do cabeçalho */
+    display: flex;               /* Ativa o modo Flexbox (alinha os elementos numa linha horizontal) */
+    justify-content: space-between; /* Distribui os itens: logo à esquerda, menu ao centro, botões à direita */
+    align-items: center;         /* Alinha todos os itens verticalmente ao centro */
+    padding: 15px 30px;          /* Espaçamento interno: 15px em cima/baixo e 30px nas laterais */
+}
+
+/* --- LOGÓTIPO --- */
+.logo {
+    display: flex;               /* Coloca o ícone do raio e o texto da marca lado a lado */
+    align-items: center;         /* Alinha o ícone e o texto verticalmente */
+    gap: 8px;                    /* Espaço de 8px entre o ícone e o texto */
+    font-weight: bold;           /* Deixa o texto do logótipo em negrito */
+}
+
+.logo-icon {
+    background-color: #0b4d48;   /* Fundo verde mais escuro para destacar o ícone */
+    color: #ffffff;              /* Cor do ícone (branco) */
+    padding: 4px 10px;           /* Espaçamento interno da caixinha do ícone */
+    border-radius: 6px;          /* Arredonda ligeiramente os cantos da caixa do ícone */
+}
+
+/* --- MENU PRINCIPAL (NAV) --- */
+nav ul {
+    list-style-type: none;       /* Remove as bolinhas/marcadores padrão da lista `<ul>` */
+    display: flex;               /* Transforma os itens da lista (`<li>`) numa linha horizontal */
+    gap: 20px;                   /* Cria um espaçamento automático de 20px entre cada link */
+}
+
+nav a {
+    color: #ffffff;              /* Cor dos links do menu (branco) */
+    text-decoration: none;       /* Remove o sublinhado padrão dos links */
+    font-weight: bold;           /* Deixa a fonte dos links em negrito */
+    transition: opacity 0.2s;    /* Transição suave de 0.2 segundos ao passar o rato */
+}
+
+nav a:hover {
+    opacity: 0.8;                /* Reduz ligeiramente a opacidade ao passar o rato (efeito visual) */
+}
+
+/* --- BOTÕES DE AUTENTICAÇÃO (DIREITA) --- */
+.nav-auth {
+    display: flex;               /* Coloca os botões de "Entrar" e "Cadastro" lado a lado */
+    align-items: center;         /* Alinha verticalmente */
+    gap: 15px;                   /* Distância de 15px entre os dois botões */
+}
+
+.btn-register {
+    background-color: #ffffff;   /* Fundo branco no botão de cadastro para dar destaque */
+    color: #12756e !important;   /* Força a cor do texto a ser o verde principal do tema */
+    padding: 8px 16px;           /* Dá tamanho ao botão (8px topo/baixo, 16px lados) */
+    border-radius: 5px;          /* Cantos ligeiramente arredondados no botão */
+}
+
+/* ==========================================================================
+   4. TIPOGRAFIA E ELEMENTOS GERAIS DE TEXTO
+   ========================================================================== */
+h1 {
+    font-size: 28px;             /* Tamanho do título principal */
+}
+
+h2 {
+    color: #12756e;              /* Cor dos títulos secundários */
+    font-size: 24px;             /* Tamanho do título secundário */
+}
+
+p {
+    line-height: 26px;           /* Altura da linha de texto (facilita a leitura de parágrafos) */
+}
+
+a {
+    color: #12756e;              /* Cor dos links gerais fora do cabeçalho */
+    text-decoration: none;       /* Remove o sublinhado dos links */
+    font-weight: bold;           /* Deixa os links em negrito */
+}
+
+/* ==========================================================================
+   5. ÁREA DE CONTEÚDO PRINCIPAL (MAIN E SECTIONS)
+   ========================================================================== */
+main {
+    padding: 20px;               /* Espaçamento interno na área principal */
+    text-align: center;          /* Centraliza o texto e títulos dentro do `<main>` */
+}
+
+section {
+    background-color: #ffffff;   /* Fundo branco para os blocos de conteúdo */
+    padding: 20px;               /* Espaço interno de 20px em redor do conteúdo */
+    margin-bottom: 20px;         /* Separação de 20px entre uma secção e a seguinte */
+    border: 1px solid #cccccc;   /* Borda fina cinzenta */
+    border-radius: 8px;          /* Arredondamento dos cantos do bloco */
+}
+
+/* ==========================================================================
+   6. TABELAS
+   ========================================================================== */
+table {
+    border-collapse: collapse;   /* Une as bordas das células para não ficarem duplas */
+}
+
+caption {
+    font-weight: bold;           /* Texto do título da tabela em negrito */
+    padding: 10px;               /* Espaçamento do título da tabela */
+}
+
+th, td {
+    border: 1px solid #cccccc;   /* Borda fina em cada célula da tabela */
+    padding: 10px;               /* Espaçamento interno dentro de cada célula */
+    text-align: left;            /* Alinha o texto das células à esquerda */
+}
+
+th {
+    background-color: #12756e;   /* Fundo verde para o cabeçalho da tabela */
+    color: #ffffff;              /* Texto branco no cabeçalho da tabela */
+}
+
+tfoot {
+    background-color: #dde8f5;   /* Fundo azul-claro para o rodapé da tabela */
+}
+
+/* ==========================================================================
+   7. FORMULÁRIOS
+   ========================================================================== */
+form {
+    background-color: #ffffff;   /* Fundo branco no formulário */
+    width: 100%;                 /* Ocupa a largura disponível até o limite do max-width */
+    max-width: 400px;            /* Limita a largura máxima do formulário a 400px */
+    padding: 20px;               /* Espaçamento interno dentro do formulário */
+    margin: 30px auto;           /* Centraliza o formulário horizontalmente na página */
+    border: 1px solid #cccccc;   /* Borda fina cinzenta */
+    border-radius: 10px;         /* Cantos arredondados no formulário */
+    text-align: center;          /* Centraliza os campos e textos dentro do formulário */
+}
+
+fieldset {
+    border: 1px solid #cccccc;   /* Borda em redor do grupo de campos */
+    padding: 15px;               /* Espaço interno dentro do fieldset */
+    margin-bottom: 20px;         /* Espaço entre diferentes fieldsets */
+}
+
+legend {
+    color: #12756e;              /* Cor do título do grupo de campos */
+    font-weight: bold;           /* Deixa a legenda em negrito */
+}
+
+label {
+    font-weight: bold;           /* Rótulos dos campos em negrito */
+}
+
+input, select, textarea {
+    font-family: Arial, sans-serif; /* Define a mesma fonte nos campos do formulário */
+    font-size: 16px;             /* Mantém a legibilidade com texto de 16px */
+}
+
+select, textarea {
+    padding: 8px;                /* Espaço interno das caixas de seleção e texto */
+    border: 1px solid #777777;   /* Borda cinzenta nos campos */
+}
+
+/* ==========================================================================
+   8. BOTÕES GERAIS
+   ========================================================================== */
+button {
+    background-color: #12756e;   /* Cor de fundo verde */
+    color: #ffffff;              /* Cor do texto do botão (branco) */
+    font-size: 16px;             /* Tamanho da fonte */
+    padding: 10px 20px;          /* Espaçamento interno (10px topo/baixo, 20px lados) */
+    margin: 5px;                 /* Margem externa em redor dos botões */
+    border: 1px solid #12756e;   /* Borda com a mesma cor do fundo */
+    border-radius: 5px;          /* Cantos ligeiramente arredondados */
+    cursor: pointer;             /* Altera o cursor para a "mãozinha" ao passar por cima */
+}
+
+/* ==========================================================================
+   9. RODAPÉ (FOOTER)
+   ========================================================================== */
+footer {
+    background-color: #12756e;   /* Fundo verde no rodapé da página */
+    color: #ffffff;              /* Texto branco */
+    text-align: center;          /* Texto centralizado no rodapé */
+    padding: 20px;               /* Espaçamento interno */
+}
+
+footer a {
+    color: #ffffff;              /* Links dentro do rodapé na cor branca */
+}
